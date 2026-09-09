@@ -17,6 +17,7 @@ Hermes Commercial · Hermes Marketing · Ariadne Data · Hermes Ops · Sentinel
 - `02-google/` — Google Ads API & Google Ads MCP
 - `03-tiktok/` — TikTok Marketing API
 - `04-ai-gateway/omniroute/` — OmniRoute AI Gateway, Combos & Resiliencia para el Swarm
+- `05-chatwoot/` — Chatwoot API v1, Webhooks, Cliente JS & Protocolo de Handoff Bot/Humano
 - `sql/` — RPCs y analítica de datos
 - `n8n/` — Workflows de integración y cableados operativos
 

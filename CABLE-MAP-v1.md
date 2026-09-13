@@ -34,6 +34,12 @@ GOOGLE:
 TIKTOK:
   @aliuntravelsrl ✅ activo
   TikTok Marketing API: 03-tiktok/ (GTI disponible)
+
+DESKTOP COMMANDER MCP:
+  Repo: wonderwhy-er/desktopcommandermcp ✅
+  Paquete: @wonderwhy-er/desktop-commander ✅
+  Estado Local (DESKTOP-2HAFT48): ✅ CONECTADO / ONLINE
+  Documentación: 06-desktop-commander/GTI-DESKTOP-COMMANDER-MCP.md ✅
 ```
 
 ---

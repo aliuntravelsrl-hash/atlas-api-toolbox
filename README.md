@@ -18,6 +18,7 @@ Hermes Commercial · Hermes Marketing · Ariadne Data · Hermes QA · Atlas Inte
   - `omniroute/` — OmniRoute AI Gateway, Combos & Resiliencia para el Swarm
   - `hermes-agent-docs/` — Guía oficial de desarrollo de Nous Research Hermes Agent (CLI, API, Toolsets, Memory, Skills)
 - `05-chatwoot/` — Chatwoot API v1, Webhooks, Cliente JS & Protocolo de Handoff Bot/Humano
+- `06-desktop-commander/` — Desktop Commander MCP (`@wonderwhy-er/desktop-commander`), Remote Bridge, Terminal & Filesystem Execution Envelope
 - `sql/` — DDLs canónicos y RPCs de analítica:
   - `sql/srm-v1.0-kraljic-legal-migration.sql` — DDL de Gobernanza SRM (Kraljic, Invoices, SPI, Evidence)
 - `n8n/` — Workflows de integración y cableados operativos

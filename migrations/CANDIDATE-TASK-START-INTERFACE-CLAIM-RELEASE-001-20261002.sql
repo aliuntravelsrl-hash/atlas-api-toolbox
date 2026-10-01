@@ -1,0 +1,45 @@
+-- CONTROLLED MATERIALIZATION CANDIDATE
+-- CLAIM-RELEASE-001 / MINIMAL TPP START INTERFACE
+-- STATUS: DESIGN ARTIFACT ONLY — DO NOT EXECUTE
+--
+-- This SQL is intentionally non-deployable until the authoritative
+-- governance/readiness predicate is identified and bound inside the
+-- Pipeline-owned START operation.
+--
+-- Contract:
+--   valid active claim
+--   -> governance/readiness
+--   -> atomic task START
+--   -> TASK_STARTED
+--
+-- Explicitly forbidden:
+--   * caller-supplied boolean "governance_passed" as authority
+--   * direct atlas_tasks UPDATE by daemon
+--   * reuse of rpc_claim_task()
+--   * treating fn_start_ovr() as task START
+--   * creation of a second lifecycle/state/queue/lease
+--
+-- Required final function shape (contractual, not executable here):
+--
+--   public.tpp_start_task(
+--       p_task_codigo text,
+--       p_claim_token uuid,
+--       p_executor text,
+--       p_correlation_id text
+--   )
+--
+-- Required atomic transaction:
+--   1. SELECT atlas_tasks FOR UPDATE
+--   2. verify state is ready/claimed according to the adopted TPP
+--   3. verify active task_claim_leases row and fencing token
+--   4. evaluate authoritative governance/readiness predicate
+--   5. update atlas_tasks -> in_progress
+--   6. insert exactly one TASK_STARTED event with claim evidence
+--   7. return start authorization/result
+--
+-- The missing item is step 4. No existing physical function inspected
+-- so far provides a sufficiently demonstrated generic predicate that can
+-- be safely embedded without inventing a new governance authority.
+--
+-- Therefore this artifact is a controlled materialization boundary,
+-- not a deployable migration.

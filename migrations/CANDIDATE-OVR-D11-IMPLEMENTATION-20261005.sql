@@ -823,8 +823,7 @@ BEGIN
        AND (v_ovr.ownership->>'claim_owner') = v_claim.claim_owner
        AND v_kbp_integrity >= 95
        AND v_blocked_count = 0
-       AND v_ovr.validated_at IS NULL
-    THEN
+       THEN
       v_ready := true;
     END IF;
 
@@ -923,7 +922,7 @@ BEGIN
   SELECT *
   INTO v_claim
   FROM public.task_claim_leases
-  WHERE id=(v_ovr.ownership->>'claim_id')::uuid
+  WHERE id::text=(v_ovr.ownership->>'claim_id')
     AND task_id=v_task.id
     AND status='active'
     AND released_at IS NULL

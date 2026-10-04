@@ -671,7 +671,7 @@ BEGIN
     RETURN jsonb_build_object('error','OVR_NOT_FOUND','ovr_id',p_ovr_id);
   END IF;
 
-  IF v_ovr.status NOT IN ('created','compiled','blocked') THEN
+  IF v_ovr.status NOT IN ('created','compiled','blocked','validated') THEN
     RETURN jsonb_build_object(
       'error','OVR_NOT_VALIDATABLE',
       'ovr_id',p_ovr_id,
